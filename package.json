@@ -41,7 +41,7 @@
     "eslint": "^4.1.0",
     "eslint-plugin-babel": "^5.0.0",
     "eslint-plugin-react": "^7.12.2",
-    "github-slugger": "^1.0.1",
+    "github-slugger": "^1.2.1",
     "highlight.js": "^9.2.0",
     "isomorphic-fetch": "^2.2.0",
     "lodash.debounce": "^4.0.3",
