@@ -5,15 +5,15 @@
  * media queries.
  */
 module.exports.brandNames = {
-  desktop: 'Wobble API Documentation',
-  tablet: 'Wobble API Docs',
+  desktop: 'QA Touch API Documentation',
+  tablet: 'QA Touch API Docs',
   mobile: 'API Docs'
 };
 
 /**
  * Classes that define the top-left brand box.
  */
-module.exports.brandClasses = 'fill-red';
+module.exports.brandClasses = 'fill-green';
 
 
 /**
