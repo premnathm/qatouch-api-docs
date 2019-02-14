@@ -43,6 +43,31 @@ curl --location --request GET "api.qatouch.com/api/v1/count/allProjects" \
 | domain  | Your QA Touch domain.  |
 | api-token  | Your secret api-token.  |
 
+### Create Project
+
+Create a new project in your domain.
+
+```
+GET api.qatouch.com/api/v1/project
+```
+#### Example request
+
+```curl
+curl --location --request POST "api.qatouch.com/api/v1/project?name=Automation" \
+  --header "api-token: " \
+  --header "domain: " \
+  --data ""
+```
+
+| Headers       | Description                |
+| ------------- | ------------- |
+| domain  | Your QA Touch domain.  |
+| api-token  | Your secret api-token.  |
+
+| Parameters  | Description|
+| ------------- | ------------- |
+| name  | Name of the new Project to be created  |
+
 ## Test Cases
 
 ### List Test Cases
