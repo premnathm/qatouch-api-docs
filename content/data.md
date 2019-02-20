@@ -77,6 +77,14 @@ Provides the list of test cases available for the project.
 ```
 GET api.qatouch.com/api/v1/getAllTestCases/{projectKey}
 ```
+#### Example request
+
+```curl
+curl --location --request GET "api.qatouch.com/api/v1/getAllTestCases/{projectKey}" \
+  --header "domain: {your-domain}" \
+  --header "api-token: {your-api-token}" \
+  --data ""
+```
 
 | Headers       | Description                |
 | ------------- | ------------- |
@@ -103,6 +111,84 @@ curl --location --request GET "api.qatouch.com/api/v1/count/allTestCases/{projec
 | ------------- | ------------- |
 | domain  | Your QA Touch domain.  |
 | api-token  | Your secret api-token.  |
+
+### List all Modules
+
+Provides the list of Modules available for the project.
+
+```
+GET api.qatouch.com/api/v1/getAllModules/{projectKey}
+```
+#### Example request
+
+```curl
+curl --location --request POST "api.qatouch.com/api/v1/getAllModules/{projectKey}" \
+  --header "api-token: {your-api-token}" \
+  --header "domain: {your-domain}" \
+  --data ""
+```
+
+| Headers       | Description|
+| ------------- | ------------- |
+| domain  | Your QA Touch domain.  |
+| api-token  | Your secret api-token.  |
+
+
+### Create Module
+
+Create a new module in your project for Test Case.
+
+```
+GET api.qatouch.com/api/v1/module
+```
+#### Example request
+
+```curl
+curl --location --request POST "api.qatouch.com/api/v1/module?projectKey={projectKey}&moduleName={moduleName}" \
+  --header "api-token: {your-api-token}" \
+  --header "domain: {your-domain}" \
+  --data ""
+```
+
+| Headers       | Description|
+| ------------- | ------------- |
+| domain  | Your QA Touch domain.  |
+| api-token  | Your secret api-token.  |
+
+
+| Parameters  | Description|
+| ------------- | ------------- |
+| projectKey  | Project Key under which the Module to be created  |
+| moduleName  | Name of the module to be created  |
+| parentKey  | (Optional) To create child module, provide this parameter with existing Module's Key  |
+
+### Create Test Cases
+
+Create a new Test Cases in your project.
+
+```
+GET api.qatouch.com/api/v1/testCase?projectKey={projectKey}&sectionKey={sectionKey}&caseTitle={caseTitle}
+```
+#### Example request
+
+```curl
+curl --location --request POST "api.qatouch.com/api/v1/module?projectKey={projectKey}&moduleName={moduleName}" \
+  --header "api-token: {your-api-token}" \
+  --header "domain: {your-domain}" \
+  --data ""
+```
+
+| Headers       | Description|
+| ------------- | ------------- |
+| domain  | Your QA Touch domain.  |
+| api-token  | Your secret api-token.  |
+
+
+| Parameters  | Description|
+| ------------- | ------------- |
+| projectKey  | Project Key under which the Module to be created  |
+| sectionKey  | Provide the section key for under which the test case should be created  |
+| caseTitle  | Title of the test case   |
 
 ## Milestones
 
