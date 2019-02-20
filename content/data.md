@@ -234,6 +234,33 @@ curl --location --request GET "api.qatouch.com/api/v1/count/allMilestones/{proje
 | domain  | Your QA Touch domain.  |
 | api-token  | Your secret api-token.  |
 
+### Create Milestone
+
+Create a new Milestone in your project.
+
+```
+GET api.qatouch.com/api/v1/milestone
+```
+#### Example request
+
+```curl
+curl --location --request POST "api.qatouch.com/api/v1/milestone?projectKey={projectKey}&milestone={milestone} \
+  --header "api-token: {your-api-token}" \
+  --header "domain: {your-domain}" \
+  --data ""
+```
+
+| Headers       | Description|
+| ------------- | ------------- |
+| domain  | Your QA Touch domain.  |
+| api-token  | Your secret api-token.  |
+
+
+| Parameters  | Description|
+| ------------- | ------------- |
+| projectKey  | Project Key under which the Milestone to be created  |
+| milestone  | Name of the milestone to be created  |
+
 ## Test Runs
 
 ### List Test Runs
