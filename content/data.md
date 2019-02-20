@@ -581,6 +581,34 @@ curl --location --request GET "api.qatouch.com/api/v1/count/allDefects/{projectK
 | api-token  | Your secret api-token.  |
 
 
+### Create Defect
+
+Create a new Defect in your project.
+
+```
+POST api.qatouch.com/api/v1/defects
+```
+#### Example request
+
+```curl
+curl --location --request POST "api.qatouch.com/api/v1/defects?projectKey={projectKey}&priority={priority}&issueSummary={issueSummary} \
+  --header "api-token: {your-api-token}" \
+  --header "domain: {your-domain}" \
+  --data ""
+```
+
+| Headers       | Description|
+| ------------- | ------------- |
+| domain  | Your QA Touch domain.  |
+| api-token  | Your secret api-token.  |
+
+
+| Parameters  | Description|
+| ------------- | ------------- |
+| projectKey  | Project Key under which the Defect to be created  |
+| priority  | Priority to be given to the Defect |
+| issueSummary  | Title of the Defect  |
+
 ## Requirements
 
 ### List Requirements
