@@ -652,3 +652,82 @@ curl --location --request GET "api.qatouch.com/api/v1/count/allRequirements/{pro
 | ------------- | ------------- |
 | domain  | Your QA Touch domain.  |
 | api-token  | Your secret api-token.  |
+
+### List Requirement Documents
+
+Provides the list of Requirement Documents created for your domain.
+
+```
+POST api.qatouch.com/api/v1/getAllRequirementDocuments/{projectKey}
+```
+#### Example request
+
+```curl
+curl --location --request GET "api.qatouch.com/api/v1/getAllRequirementDocuments/{projectKey}" \
+  --header "domain: {your-domain}" \
+  --header "api-token: {your-api-token}" \
+  --data ""
+```
+
+| Headers       | Description                |
+| ------------- | ------------- |
+| domain  | Your QA Touch domain.  |
+| api-token  | Your secret api-token.  |
+
+
+### Create Requirement Document
+
+Create a new Requirement Document in your project.
+
+```
+POST api.qatouch.com/api/v1/requirement/document
+```
+#### Example request
+
+```curl
+curl --location --request POST "api.qatouch.com/api/v1/requirement/document?projectKey={projectKey}&releaseKey={releaseKey}&title={title} \
+  --header "api-token: {your-api-token}" \
+  --header "domain: {your-domain}" \
+  --data ""
+```
+
+| Headers       | Description|
+| ------------- | ------------- |
+| domain  | Your QA Touch domain.  |
+| api-token  | Your secret api-token.  |
+
+
+| Parameters  | Description|
+| ------------- | ------------- |
+| projectKey  | Project Key under which the Requirement Document has to be created  |
+| releaseKey  | Provide the release key under which Requirement Document has to be created  |
+| title  | Title of the Requirement Document  |
+
+### Create Requirement
+
+Create a new Requirement Document in your project.
+
+```
+POST api.qatouch.com/api/v1/requirement
+```
+#### Example request
+
+```curl
+curl --location --request POST "api.qatouch.com/api/v1/requirement?projectKey={projectKey}&documentKey={documentKey}&title={title}&desc={desc} \
+  --header "api-token: {your-api-token}" \
+  --header "domain: {your-domain}" \
+  --data ""
+```
+
+| Headers       | Description|
+| ------------- | ------------- |
+| domain  | Your QA Touch domain.  |
+| api-token  | Your secret api-token.  |
+
+
+| Parameters  | Description|
+| ------------- | ------------- |
+| projectKey  | Project Key under which the Requirement has to be created  |
+| documentKey  | Provide the document key under which Requirement has to be created  |
+| title  | Title of the Requirement  |
+| desc  | Description of the Requirement  |
