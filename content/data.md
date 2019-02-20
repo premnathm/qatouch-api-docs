@@ -5,7 +5,7 @@
 Provides the list of projects created for your domain.
 
 ```
-GET api.qatouch.com/api/v1/getAllProjects
+POST api.qatouch.com/api/v1/getAllProjects
 ```
 #### Example request
 
@@ -48,7 +48,7 @@ curl --location --request GET "api.qatouch.com/api/v1/count/allProjects" \
 Create a new project in your domain.
 
 ```
-GET api.qatouch.com/api/v1/project
+POST api.qatouch.com/api/v1/project
 ```
 #### Example request
 
@@ -139,7 +139,7 @@ curl --location --request POST "api.qatouch.com/api/v1/getAllModules/{projectKey
 Create a new module in your project for Test Case.
 
 ```
-GET api.qatouch.com/api/v1/module
+POST api.qatouch.com/api/v1/module
 ```
 #### Example request
 
@@ -167,7 +167,7 @@ curl --location --request POST "api.qatouch.com/api/v1/module?projectKey={projec
 Create a new Test Cases in your project.
 
 ```
-GET api.qatouch.com/api/v1/testCase?projectKey={projectKey}&sectionKey={sectionKey}&caseTitle={caseTitle}
+POST api.qatouch.com/api/v1/testCase?projectKey={projectKey}&sectionKey={sectionKey}&caseTitle={caseTitle}
 ```
 #### Example request
 
@@ -239,7 +239,7 @@ curl --location --request GET "api.qatouch.com/api/v1/count/allMilestones/{proje
 Create a new Milestone in your project.
 
 ```
-GET api.qatouch.com/api/v1/milestone
+POST api.qatouch.com/api/v1/milestone
 ```
 #### Example request
 
@@ -399,6 +399,57 @@ curl --location --request PATCH "api.qatouchapi.com/api/v1/testRunResults/status
 | project  | Project Key.  |
 | test_run  | Test Run Key.  |
 | run_result  | Test Run Result Key.  
+
+### List all available Users for Testing
+
+Provides the list of Users in the project available for Testing.
+
+```
+GET api.qatouch.com/api/v1/testRun/availableUsers/{projectKey}
+```
+
+#### Example request
+
+```curl
+curl --location --request GET "api.qatouch.com/api/v1/testRun/availableUsers/{projectKey}" \
+  --header "domain: {your-domain}" \
+  --header "api-token: {your-api-token}" \
+  --data ""
+```
+
+| Headers       | Description|
+| ------------- | ------------- |
+| domain  | Your QA Touch domain.  |
+| api-token  | Your secret api-token.  |
+
+### Create Test Run
+
+Create a new Test Run in your project.
+
+```
+POST api.qatouch.com/api/v1/testRun
+```
+#### Example request
+
+```curl
+curl --location --request POST "api.qatouch.com/api/v1/testRun?projectKey={projectKey}&assignTo={assignTo}&milestoneKey={milestoneKey}&testRun={testRun} \
+  --header "api-token: {your-api-token}" \
+  --header "domain: {your-domain}" \
+  --data ""
+```
+
+| Headers       | Description|
+| ------------- | ------------- |
+| domain  | Your QA Touch domain.  |
+| api-token  | Your secret api-token.  |
+
+
+| Parameters  | Description|
+| ------------- | ------------- |
+| projectKey  | Project Key under which the Test Run to be created  |
+| assignTo  | User key to which the Test Run to be assigned  |
+| milestoneKey  | Provide the milestone key to be assigned to Test Run  |
+| testRun  | Title of the Test Run  |
 
 
 ## Defects
